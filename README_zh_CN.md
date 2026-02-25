@@ -1,6 +1,6 @@
 # pine-spring-boot-starter
 
-松树RocketMQ   SpringBoot 版
+松树  SpringBoot 版
 
 [English](./README.md)
 
@@ -28,7 +28,7 @@
         <dependency>
             <artifactId>pine-spring-boot-starter</artifactId>
             <groupId>io.github.thierrysquirrel</groupId>
-            <version>1.5.0.1-RELEASE</version>
+            <version>1.5.0.2-RELEASE</version>
         </dependency>
 ``` 
 

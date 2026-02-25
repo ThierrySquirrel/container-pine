@@ -23,7 +23,9 @@ import io.github.thierrysquirrel.pine.netty.service.core.thread.AbstractPineServ
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.MultiThreadIoEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.nio.NioIoHandler;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
@@ -47,8 +49,8 @@ public class PineServiceInitThreadExecution extends AbstractPineServiceInitThrea
 
     @Override
     protected void pineServiceInit(ThreadPoolExecutor pingServiceBusinessThreadPool,String pineServiceUrl) {
-        EventLoopGroup bossGroup = new NioEventLoopGroup ();
-        EventLoopGroup workerGroup = new NioEventLoopGroup ();
+        EventLoopGroup bossGroup = new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory());
+        EventLoopGroup workerGroup = new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory());
 
         ServerBootstrap b = new ServerBootstrap ();
 

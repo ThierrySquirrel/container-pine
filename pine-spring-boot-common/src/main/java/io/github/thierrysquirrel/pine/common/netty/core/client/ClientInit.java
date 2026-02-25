@@ -17,10 +17,10 @@
 package io.github.thierrysquirrel.pine.common.netty.core.client;
 
 
+import io.github.thierrysquirrel.pine.common.netty.core.client.container.ClientContainer;
 import io.github.thierrysquirrel.pine.common.netty.core.client.factory.InetSocketAddressFactory;
 import io.github.thierrysquirrel.pine.common.netty.core.client.factory.constant.IdleStateConstant;
 import io.github.thierrysquirrel.pine.common.netty.core.client.utils.RandomUtils;
-import io.github.thierrysquirrel.pine.common.netty.core.constant.ClientConstant;
 import io.github.thierrysquirrel.pine.common.netty.domain.PineRequestContext;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -57,7 +57,7 @@ public class ClientInit {
             return;
         }
         Bootstrap b = new Bootstrap ();
-        b.group (ClientConstant.CLIENT_EVENT_LOOP_GROUP)
+        b.group (ClientContainer.getEventLoopGroup(url))
                 .channel (NioSocketChannel.class)
                 .handler (new ClientInitInitChannelHandler (IdleStateConstant.OTHER_TIMEOUT.getValue (),
                         IdleStateConstant.WRITE_TIMEOUT.getValue (),

@@ -1,6 +1,6 @@
 # pine-spring-boot-starter
 
-Pine RocketMQ Spring Book Edition
+Pine Spring Book Edition
 
 [中文](./README_zh_CN.md)
 
@@ -30,7 +30,7 @@ Support function:
         <dependency>
             <artifactId>pine-spring-boot-starter</artifactId>
             <groupId>io.github.thierrysquirrel</groupId>
-            <version>1.5.0.1-RELEASE</version>
+            <version>1.5.0.2-RELEASE</version>
         </dependency>
 ``` 
 
